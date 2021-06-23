@@ -81,7 +81,7 @@
             <div class="js-biquadFilter biquadFilter">
                 <div class="text-wrapper">
                     <span class="text">biquadFilter</span>
-                    <input class="js-bq-filter bq-filter-checkbox" type="checkbox">
+                    <input class="js-bq-filter-checkbox bq-filter-checkbox" type="checkbox">
                 </div>
 
                 <div class="input-wrapper">
@@ -177,7 +177,41 @@
                         </datalist>
                     </div>
                 </div>
+            </div>
 
+            <div class="convolver-wrapper">
+<!--                <div class="text-wrapper">-->
+<!--                    <span class="text">reverb</span>-->
+<!--                    <input class="js-convolver-on-off-checkbox bq-filter-checkbox" type="checkbox">-->
+<!--                </div>-->
+
+<!--                <div class="input-wrapper">-->
+<!--                    <label class="input-label" for="convolver-volume">convolver-volume</label>-->
+<!--                    <div class="input-datalist-wrapper">-->
+<!--                        <input-->
+<!--                                type="range"-->
+<!--                                id="convolver-volume"-->
+<!--                                class="js-control-convolver-volume"-->
+<!--                                min="0" max="2"-->
+<!--                                value="0"-->
+<!--                                step="0.01"-->
+<!--                                list="convolver-volume-list"-->
+<!--                        />-->
+<!--                        <datalist id="convolver-volume-list">-->
+<!--                            <option value="0" label="0"></option>-->
+<!--                            <option value="2" label="2"></option>-->
+<!--                        </datalist>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+                <div class="input-wrapper">
+                    <label class="input-label" for="reverb">reverbTypes</label>
+
+                    <select class="js-reverb-select-type" name="reverb" id="reverb">
+                        <option value="./files/IMreverbs/Block-Inside.wav">Block-Inside</option>
+                        <option value="./files/IMreverbs/Bottle-Hall.wav">Bottle-Hall</option>
+                    </select>
+                </div>
             </div>
         </div>
 
