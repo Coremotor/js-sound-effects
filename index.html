@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js_audio_player_research</title>
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script defer src="scripts/main.js" type="module"></script>
+</head>
+<body>
+<div class="container">
+    <div class="players-wrapper">
+        <div class="player">
+            <audio class="js-audio" src="files/Rock-and-Roll-Heaven.mp3" crossorigin="anonymous"></audio>
+
+            <div class="controls-wrapper">
+                <button class="btn btn-play js-btn-play">play</button>
+                <button class="btn btn-pause js-btn-pause">pause</button>
+            </div>
+
+            <progress class="js-progress progress" value="0"></progress>
+
+            <div class="input-wrapper">
+                <label class="input-label" for="volume">volume</label>
+                <div class="input-datalist-wrapper">
+                    <input
+                            type="range"
+                            id="volume"
+                            class="js-control-volume"
+                            min="0" max="2"
+                            value="1"
+                            step="0.01"
+                            list="volume-list"
+                    />
+                    <datalist id="volume-list">
+                        <option value="0" label="0%"></option>
+                        <option value="2" label="100%"></option>
+                    </datalist>
+                </div>
+            </div>
+
+            <div class="input-wrapper">
+                <label class="input-label" for="panner">panner</label>
+                <div class="input-datalist-wrapper">
+                    <input
+                            type="range"
+                            id="panner"
+                            class="js-control-panner"
+                            min="-1" max="1"
+                            value="0"
+                            step="0.01"
+                            list="panner-list"
+                    />
+                    <datalist id="panner-list">
+                        <option value="-1" label="-1"></option>
+                        <option value="1" label="1"></option>
+                    </datalist>
+                </div>
+            </div>
+
+            <div class="input-wrapper">
+                <label class="input-label" for="delay">delay</label>
+                <div class="input-datalist-wrapper">
+                    <input
+                            type="range"
+                            id="delay"
+                            class="js-control-delay"
+                            min="0" max="5"
+                            value="0"
+                            step="0.1"
+                            list="delay-list"
+                    />
+
+                    <datalist id="delay-list">
+                        <option value="0" label="0"></option>
+                        <option value="5" label="5c"></option>
+                    </datalist>
+                </div>
+            </div>
+
+            <div class="js-biquadFilter biquadFilter">
+                <div class="text-wrapper">
+                    <span class="text">biquadFilter</span>
+                    <input class="js-bq-filter bq-filter-checkbox" type="checkbox">
+                </div>
+
+                <div class="input-wrapper">
+                    <label class="input-label" for="biquadFilter">type</label>
+
+                    <select class="js-biquadFilter-select-type" name="biquadFilter" id="biquadFilter">
+                        <option value="lowpass">lowpass</option>
+                        <option value="highpass">highpass</option>
+                        <option value="bandpass">bandpass</option>
+                        <option value="lowshelf">lowshelf</option>
+                        <option value="highshelf">highshelf</option>
+                        <option value="peaking">peaking</option>
+                        <option value="notch">notch</option>
+                        <option value="allpass">allpass</option>
+                    </select>
+                </div>
+
+                <div class="input-wrapper">
+                    <label class="input-label" for="frequency">frequency</label>
+                    <div class="input-datalist-wrapper">
+                        <input
+                                type="range"
+                                id="frequency"
+                                class="js-control-frequency"
+                                min="0" max="24000"
+                                value="350"
+                                step="10"
+                                list="frequency-list"
+                        />
+
+                        <datalist id="frequency-list">
+                            <option value="0" label="0"></option>
+                            <option value="24000" label="24000"></option>
+                        </datalist>
+                    </div>
+                </div>
+
+                <div class="input-wrapper">
+                    <label class="input-label" for="detune">detune</label>
+                    <div class="input-datalist-wrapper">
+                        <input
+                                type="range"
+                                id="detune"
+                                class="js-control-detune"
+                                min="-153600" max="153600"
+                                value="0"
+                                step="100"
+                                list="detune-list"
+                        />
+
+                        <datalist id="detune-list">
+                            <option value="-153600" label="-153600"></option>
+                            <option value="153600" label="153600"></option>
+                        </datalist>
+                    </div>
+                </div>
+
+                <div class="input-wrapper">
+                    <label class="input-label" for="Q">Q</label>
+                    <div class="input-datalist-wrapper">
+                        <input
+                                type="range"
+                                id="Q"
+                                class="js-control-Q"
+                                min="-100" max="100"
+                                value=10"
+                                step="1"
+                                list="Q-list"
+                        />
+
+                        <datalist id="Q-list">
+                            <option value="-100" label="-100"></option>
+                            <option value="100" label="100"></option>
+                        </datalist>
+                    </div>
+                </div>
+
+                <div class="input-wrapper">
+                    <label class="input-label" for="gain">gain</label>
+                    <div class="input-datalist-wrapper">
+                        <input
+                                type="range"
+                                id="gain"
+                                class="js-control-gain"
+                                min="-100" max="100"
+                                value="0"
+                                step="1"
+                                list="gain-list"
+                        />
+                        <datalist id="gain-list">
+                            <option value="-100" label="-100"></option>
+                            <option value="100" label="100"></option>
+                        </datalist>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="player">
+            <div class="controls-wrapper">
+                <button class="btn btn-play js-btn-voice-on">voice on</button>
+                <button class="btn btn-play js-btn-voice-off">voice off</button>
+            </div>
+
+            <div class="input-wrapper">
+                <label class="input-label" for="voice-volume">VOLUME</label>
+                <div class="input-datalist-wrapper">
+                    <input
+                            type="range"
+                            id="voice-volume"
+                            class="js-control-voice-volume"
+                            min="0" max="2"
+                            value="1"
+                            step="0.01"
+                            list="voice-volume-list"
+                    />
+                    <datalist id="voice-volume-list">
+                        <option value="0" label="0%"></option>
+                        <option value="2" label="100%"></option>
+                    </datalist>
+                </div>
+            </div>
+
+            <div class="input-wrapper">
+                <label class="input-label" for="voice-panner">PANNER</label>
+                <div class="input-datalist-wrapper">
+                    <input
+                            type="range"
+                            id="voice-panner"
+                            class="js-control-voice-panner"
+                            min="-1" max="1"
+                            value="0"
+                            step="0.01"
+                            list="voice-panner-list"
+                    />
+                    <datalist id="voice-panner-list">
+                        <option value="-1" label="-1"></option>
+                        <option value="1" label="1"></option>
+                    </datalist>
+                </div>
+            </div>
+
+            <div class="input-wrapper">
+                <label class="input-label" for="voice-delay">DELAY</label>
+                <div class="input-datalist-wrapper">
+                    <input
+                            type="range"
+                            id="voice-delay"
+                            class="js-control-voice-delay"
+                            min="0" max="5"
+                            value="0"
+                            step="0.1"
+                            list="voice-delay-list"
+                    />
+
+                    <datalist id="voice-delay-list">
+                        <option value="0" label="0"></option>
+                        <option value="5" label="5"></option>
+                    </datalist>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/BiquadFilterNode">BiquadFilter</a>
+</div>
+
+</body>
+</html>
