@@ -1,4 +1,5 @@
 export const recordFn = async () => {
+    console.log('recordFnClick')
     const recordBtn = document.querySelector('.js-btn-record-start')
     const stopRecordBtn = document.querySelector('.js-btn-record-stop')
     const soundClips = document.querySelector('.js-sound-clips')
@@ -51,9 +52,9 @@ export const recordFn = async () => {
             soundClips.appendChild(clipContainer);
 
             audio.controls = true;
-            let file = new File(chunks,'file', {'type': 'audio/ogg; codecs=opus'});
+            let blob = new Blob(chunks,{'type': 'audio/ogg; codecs=opus'});
             chunks = [];
-            audio.src = URL.createObjectURL(file);
+            audio.src = URL.createObjectURL(blob);
             console.log("recorder stopped");
 
             deleteButton.onclick = function (e) {
