@@ -12,10 +12,7 @@ export const convolverController = async (audioCtx, reverbSelect) => {
         let response     = await fetch(event.target.value);
         let arraybuffer  = await response.arrayBuffer();
         convolverNode.buffer = await audioCtx.decodeAudioData(arraybuffer);
-        console.log(convolverNode)
     }, false);
-
-    console.log(convolverNode)
 
     return convolverNode
 }
@@ -31,7 +28,5 @@ export const gainConvolverController = (audioCtx, selector) => {
         gainConvolverNode.gain.value = event.target.value;
     }, false);
 
-    console.log(gainConvolverNode)
     return gainConvolverNode
-
 }

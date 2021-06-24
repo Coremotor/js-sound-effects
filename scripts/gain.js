@@ -9,6 +9,5 @@ export const gainController = (audioCtx, selector) => {
         gainNode.gain.value = event.target.value;
     }, false);
 
-    console.log(gainNode)
     return gainNode
 }

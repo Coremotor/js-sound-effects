@@ -9,6 +9,5 @@ export const delayController = (audioCtx, selector) => {
         delayNode.delayTime.value = event.target.value;
     }, false);
 
-    console.log(delayNode)
     return delayNode
 }

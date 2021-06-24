@@ -180,36 +180,191 @@
             </div>
 
             <div class="convolver-wrapper">
-<!--                <div class="text-wrapper">-->
-<!--                    <span class="text">reverb</span>-->
-<!--                    <input class="js-convolver-on-off-checkbox bq-filter-checkbox" type="checkbox">-->
-<!--                </div>-->
-
-<!--                <div class="input-wrapper">-->
-<!--                    <label class="input-label" for="convolver-volume">convolver-volume</label>-->
-<!--                    <div class="input-datalist-wrapper">-->
-<!--                        <input-->
-<!--                                type="range"-->
-<!--                                id="convolver-volume"-->
-<!--                                class="js-control-convolver-volume"-->
-<!--                                min="0" max="2"-->
-<!--                                value="0"-->
-<!--                                step="0.01"-->
-<!--                                list="convolver-volume-list"-->
-<!--                        />-->
-<!--                        <datalist id="convolver-volume-list">-->
-<!--                            <option value="0" label="0"></option>-->
-<!--                            <option value="2" label="2"></option>-->
-<!--                        </datalist>-->
-<!--                    </div>-->
-<!--                </div>-->
+                <div class="text-wrapper">
+                    <span class="text">reverb</span>
+                    <input class="js-convolver-on-off-checkbox bq-filter-checkbox" type="checkbox">
+                </div>
 
                 <div class="input-wrapper">
                     <label class="input-label" for="reverb">reverbTypes</label>
 
                     <select class="js-reverb-select-type" name="reverb" id="reverb">
-                        <option value="./files/IMreverbs/Block-Inside.wav">Block-Inside</option>
-                        <option value="./files/IMreverbs/Bottle-Hall.wav">Bottle-Hall</option>
+                        <option value="./files/IMreverbs/BlockInside.wav">BlockInside.wav</option>
+                        <option value="./files/IMreverbs/BottleHall.wav">BottleHall.wav</option>
+                        <option value="./files/IMreverbs/CementBlocks1.wav">CementBlocks1.wav</option>
+                        <option value="./files/IMreverbs/CementBlocks2.wav">CementBlocks2.wav</option>
+                        <option value="./files/IMreverbs/ChateaudeLogneOutside.wav">ChateaudeLogneOutside.wav</option>
+                        <option value="./files/IMreverbs/ConicLongEchoHall.wav">ConicLongEchoHall.wav</option>
+                        <option value="./files/IMreverbs/DeepSpace.wav">DeepSpace.wav</option>
+                        <option value="./files/IMreverbs/DerlonSanctuary.wav">DerlonSanctuary.wav</option>
+                        <option value="./files/IMreverbs/DirectCabinetN1.wav">DirectCabinetN1.wav</option>
+                        <option value="./files/IMreverbs/DirectCabinetN2.wav">DirectCabinetN2.wav</option>
+                        <option value="./files/IMreverbs/DirectCabinetN3.wav">DirectCabinetN3.wav</option>
+                        <option value="./files/IMreverbs/DirectCabinetN4.wav">DirectCabinetN4.wav</option>
+                        <option value="./files/IMreverbs/FiveColumns.wav">FiveColumns.wav</option>
+                        <option value="./files/IMreverbs/FiveColumnsLong.wav">FiveColumnsLong.wav</option>
+                        <option value="./files/IMreverbs/French18thCenturySalon.wav">French18thCenturySalon.wav</option>
+                        <option value="./files/IMreverbs/GoingHome.wav">GoingHome.wav</option>
+                        <option value="./files/IMreverbs/Greek7EchoHall.wav">Greek7EchoHall.wav</option>
+                        <option value="./files/IMreverbs/HighlyDampedLargeRoom.wav">HighlyDampedLargeRoom.wav</option>
+                        <option value="./files/IMreverbs/InTheSilo.wav">InTheSilo.wav</option>
+                        <option value="./files/IMreverbs/InTheSiloRevised.wav">InTheSiloRevised.wav</option>
+                        <option value="./files/IMreverbs/LargeBottleHall.wav">LargeBottleHall.wav</option>
+                        <option value="./files/IMreverbs/LargeLongEchoHall.wav">LargeLongEchoHall.wav</option>
+                        <option value="./files/IMreverbs/LargeWideEchoHall.wav">LargeWideEchoHall.wav</option>
+                        <option value="./files/IMreverbs/MasonicLodge.wav">MasonicLodge.wav</option>
+                        <option value="./files/IMreverbs/Musikvereinsaal.wav">Musikvereinsaal.wav</option>
+                        <option value="./files/IMreverbs/NarrowBumpySpace.wav">NarrowBumpySpace.wav</option>
+                        <option value="./files/IMreverbs/NiceDrumRoom.wav">NiceDrumRoom.wav</option>
+                        <option value="./files/IMreverbs/OnaStar.wav">OnaStar.wav</option>
+                        <option value="./files/IMreverbs/ParkingGarage.wav">ParkingGarage.wav</option>
+                        <option value="./files/IMreverbs/Rays.wav">Rays.wav</option>
+                        <option value="./files/IMreverbs/RightGlassTriangle.wav">RightGlassTriangle.wav</option>
+                        <option value="./files/IMreverbs/RubyRoom.wav">RubyRoom.wav</option>
+                        <option value="./files/IMreverbs/ScalaMilanOperaHall.wav">ScalaMilanOperaHall.wav</option>
+                        <option value="./files/IMreverbs/SmallDrumRoom.wav">SmallDrumRoom.wav</option>
+                        <option value="./files/IMreverbs/SmallPrehistoricCave.wav">SmallPrehistoricCave.wav</option>
+                        <option value="./files/IMreverbs/StNicolaesChurch.wav">StNicolaesChurch.wav</option>
+                        <option value="./files/IMreverbs/TrigRoom.wav">TrigRoom.wav</option>
+                        <option value="./files/IMreverbs/VocalDuo.wav">VocalDuo.wav</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="convolver-wrapper">
+                <div class="text-wrapper">
+                    <span class="text">compressor</span>
+                    <input class="js-compressor-on-off-checkbox bq-filter-checkbox" type="checkbox">
+                </div>
+
+                <div class="input-wrapper">
+                    <label class="input-label" for="threshold">threshold</label>
+                    <div class="input-datalist-wrapper">
+                        <input
+                                type="range"
+                                id="threshold"
+                                class="js-control-threshold"
+                                min="-100" max="0"
+                                value="-24"
+                                step="1"
+                                list="threshold-list"
+                        />
+                        <datalist id="threshold-list">
+                            <option value="-100" label="-100"></option>
+                            <option value="0" label="0"></option>
+                        </datalist>
+                    </div>
+                </div>
+
+                <div class="input-wrapper">
+                    <label class="input-label" for="knee">knee</label>
+                    <div class="input-datalist-wrapper">
+                        <input
+                                type="range"
+                                id="knee"
+                                class="js-control-knee"
+                                min="0" max="40"
+                                value="30"
+                                step="1"
+                                list="knee-list"
+                        />
+                        <datalist id="knee-list">
+                            <option value="0" label="0"></option>
+                            <option value="40" label="40"></option>
+                        </datalist>
+                    </div>
+                </div>
+
+                <div class="input-wrapper">
+                    <label class="input-label" for="ratio">ratio</label>
+                    <div class="input-datalist-wrapper">
+                        <input
+                                type="range"
+                                id="ratio"
+                                class="js-control-ratio"
+                                min="1" max="20"
+                                value="12"
+                                step="1"
+                                list="ratio-list"
+                        />
+                        <datalist id="ratio-list">
+                            <option value="1" label="1"></option>
+                            <option value="20" label="20"></option>
+                        </datalist>
+                    </div>
+                </div>
+
+                <div class="input-wrapper">
+                    <label class="input-label" for="attack">attack</label>
+                    <div class="input-datalist-wrapper">
+                        <input
+                                type="range"
+                                id="attack"
+                                class="js-control-attack"
+                                min="0" max="1"
+                                value="0.003"
+                                step="0.001"
+                                list="attack-list"
+                        />
+                        <datalist id="attack-list">
+                            <option value="0" label="0"></option>
+                            <option value="1" label="1"></option>
+                        </datalist>
+                    </div>
+                </div>
+
+                <div class="input-wrapper">
+                    <label class="input-label" for="release">release</label>
+                    <div class="input-datalist-wrapper">
+                        <input
+                                type="range"
+                                id="release"
+                                class="js-control-release"
+                                min="0" max="1"
+                                value="0.25"
+                                step="0.1"
+                                list="release-list"
+                        />
+                        <datalist id="release-list">
+                            <option value="0" label="0"></option>
+                            <option value="1" label="1"></option>
+                        </datalist>
+                    </div>
+                </div>
+            </div>
+
+            <div class="convolver-wrapper">
+                <div class="text-wrapper">
+                    <span class="text">waveShaper</span>
+                    <input class="js-waveShaper-on-off-checkbox bq-filter-checkbox" type="checkbox">
+                </div>
+
+                <div class="input-wrapper">
+                    <label class="input-label" for="distortion">distortion</label>
+                    <div class="input-datalist-wrapper">
+                        <input
+                                type="range"
+                                id="distortion"
+                                class="js-control-distortion"
+                                min="10" max="400"
+                                value="10"
+                                step="10"
+                                list="distortion-list"
+                        />
+                        <datalist id="distortion-list">
+                            <option value="10" label="10"></option>
+                            <option value="400" label="400"></option>
+                        </datalist>
+                    </div>
+                </div>
+
+                <div class="input-wrapper">
+                    <label class="input-label" for="oversample">oversample</label>
+
+                    <select class="js-oversample-select-type" name="oversample" id="oversample">
+                        <option value="none">none</option>
+                        <option value="2x">2x</option>
+                        <option value="4x">4x</option>
                     </select>
                 </div>
             </div>
@@ -282,6 +437,7 @@
     </div>
 
     <a href="https://developer.mozilla.org/en-US/docs/Web/API/BiquadFilterNode">BiquadFilter</a>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/DynamicsCompressorNode">DynamicsCompressor</a>
 </div>
 
 </body>

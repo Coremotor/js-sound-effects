@@ -11,6 +11,5 @@ export const pannerController = (audioCtx, selector) => {
         pannerNode.pan.value = event.target.value;
     }, false);
 
-    console.log(pannerNode)
     return pannerNode
 }

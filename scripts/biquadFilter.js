@@ -29,6 +29,5 @@ export const biquadFilterController = (audioCtx, selectorType, frequency, detune
         biquadFilterNode.gain.value = event.target.value;
     }, false);
 
-    console.log(biquadFilterNode)
     return biquadFilterNode
 }
