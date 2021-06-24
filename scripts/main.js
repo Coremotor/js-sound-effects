@@ -6,6 +6,7 @@ import {convolverController} from '../scripts/convolver.js'
 import {compressorController} from '../scripts/compressor.js'
 import {waveShaperController} from '../scripts/waveShaper.js'
 import {voiceFn} from '../scripts/voice.js'
+import {recordFn} from '../scripts/record.js'
 
 
 const AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -30,6 +31,7 @@ audioElement.addEventListener('timeupdate' , () => {
 const playButton = document.querySelector('.js-btn-play');
 const pauseButton = document.querySelector('.js-btn-pause');
 const voiceButton = document.querySelector('.js-btn-voice-on')
+const voiceRecordButton = document.querySelector('.js-btn-record-start')
 const progressElement = document.querySelector('.js-progress');
 const biquadFilterCheckbox = document.querySelector('.js-bq-filter-checkbox');
 const convolverCheckbox = document.querySelector('.js-convolver-on-off-checkbox');
@@ -171,4 +173,6 @@ pauseButton.addEventListener('click', async () => {
 
 //add listener on voice button
 voiceButton.addEventListener('click', voiceFn, false)
+
+voiceRecordButton.addEventListener('click', recordFn, false)
 
