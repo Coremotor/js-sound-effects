@@ -172,7 +172,7 @@ pauseButton.addEventListener('click', async () => {
 }, false)
 
 //add listener on voice button
-voiceButton.addEventListener('click', voiceFn, false)
-
-voiceRecordButton.addEventListener('click', recordFn, false)
+// voiceButton.addEventListener('click', voiceFn, false)
+//
+// voiceRecordButton.addEventListener('click', recordFn, false)
 
