@@ -8,14 +8,8 @@ import {waveShaperController} from '../scripts/waveShaper.js'
 import {voiceFn} from '../scripts/voice.js'
 import {recordFn} from '../scripts/record.js'
 
-
 const AudioContext = window.AudioContext || window.webkitAudioContext;
 const audioCtx = new AudioContext();
-
-const filersState = {
-    bqFilter: false,
-    convolver: false,
-}
 
 // load some sound
 const audioElement = document.querySelector('.js-audio');
@@ -48,9 +42,9 @@ const bqFilterNode = biquadFilterController(
     '.js-control-Q',
     '.js-control-gain'
     )
-const gainNode = gainController(audioCtx, '.js-control-volume')
-const pannerNode = pannerController(audioCtx, '.js-control-panner')
-const delayNode = delayController(audioCtx, '.js-control-delay')
+const gainNode = await gainController(audioCtx, '.js-control-volume')
+const pannerNode = await pannerController(audioCtx, '.js-control-panner')
+const delayNode = await delayController(audioCtx, '.js-control-delay')
 // const gain = gainConvolverController(audioCtx, '.js-control-convolver-volume')
 const convolverNode = await convolverController(audioCtx, '.js-reverb-select-type')
 const waveShaperNode = await waveShaperController(audioCtx, '.js-control-distortion', '.js-oversample-select-type')
@@ -158,6 +152,8 @@ gainNode.connect(pannerNode)
 pannerNode.connect(delayNode)
 delayNode.connect(audioCtx.destination)
 
+// const source = delayNode.createMediaElementSource(myAudio)
+
 
 //add listener on play button
 playButton.addEventListener('click', async () => {
@@ -172,7 +168,7 @@ pauseButton.addEventListener('click', async () => {
 }, false)
 
 //add listener on voice button
-// voiceButton.addEventListener('click', voiceFn, false)
-//
-// voiceRecordButton.addEventListener('click', recordFn, false)
+voiceButton.addEventListener('click', voiceFn, false)
+
+voiceRecordButton.addEventListener('click', recordFn, false)
 
